@@ -1,9 +1,30 @@
-import logo from './logo.svg';
+import { createBrowserRouter } from 'react-router-dom';
 import './App.css';
+import About from './components/About';
+import Home from './components/Home';
+import Main from './components/Main';
+import Products from './components/Products';
+import Users from './components/Users';
+
 
 function App() {
+  const router = createBrowserRouter([
+    {
+
+      path: '/',
+      element: <Main></Main>,
+      children: [
+        { path: '/home', element: <Home></Home> },
+        { path: '/products', element: <Products></Products> },
+        { path: '/users', element: <Users></Users> }
+      ]
+    },
+    { path: '/about', element: <About></About> }
+  ])
+
   return (
     <div className="App">
+
 
     </div>
   );
