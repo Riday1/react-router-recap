@@ -15,10 +15,14 @@ function App() {
       children: [
         { path: '/home', element: <Home></Home> },
         { path: '/products', element: <Products></Products> },
-        { path: '/users', element: <Users></Users> }
+        {
+          path: '/users', element: <Users></Users>, loader: () => {
+            return fetch('https://jsonplaceholder.typicode.com/users')
+          }
+        },
+        { path: '/about', element: <About></About> },
       ]
     },
-    { path: '/about', element: <About></About> },
     { path: '*', element: <div>Not Found !! 404</div> }
   ])
 
