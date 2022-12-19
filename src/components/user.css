@@ -23,3 +23,11 @@
 
 
 }
+
+.user-details {
+    background-color: rgba(243, 181, 65, 0.986);
+    padding: 10px;
+    border-radius: 20px;
+    width: 700px;
+    margin: 0 auto;
+}
