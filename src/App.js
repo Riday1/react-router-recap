@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import About from './components/About';
 import Home from './components/Home';
@@ -10,7 +10,6 @@ import Users from './components/Users';
 function App() {
   const router = createBrowserRouter([
     {
-
       path: '/',
       element: <Main></Main>,
       children: [
@@ -19,13 +18,14 @@ function App() {
         { path: '/users', element: <Users></Users> }
       ]
     },
-    { path: '/about', element: <About></About> }
+    { path: '/about', element: <About></About> },
+    { path: '*', element: <div>Not Found !! 404</div> }
   ])
 
   return (
     <div className="App">
 
-
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
